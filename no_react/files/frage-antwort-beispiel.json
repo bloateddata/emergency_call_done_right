@@ -1,0 +1,63 @@
+{
+    "type": "question",
+    "request": "Was ist passiert1?",
+    "choices": [
+        {
+            "type": "answer",
+            "response": "Verkehrsunfall",
+            "choices": [
+                {
+                    "type": "question",
+                    "response": "Wie viele Personen sind betroffen?",
+                    "choices": [
+                        {
+                            "type": "answer",
+                            "response": "1",
+                            "choices": [
+                                {
+                                    "type": "question",
+                                    "response": "Ist die Person ansprechbar?",
+                                    "choices": [
+                                        {
+                                            "type": "answer",
+                                            "response": "Ja",
+                                            "choices": [
+                                                {
+                                                    "type": "question",
+                                                    "response": "Wo ist der Unfall passiert?",
+                                                    "choices": [
+                                                        {
+                                                            "type": "answer",
+                                                            "response": "Stadt",
+                                                            "choices": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "answer",
+                                            "response": "Nein",
+                                            "choices": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {}
+            ]
+        },
+        {
+            "type": "answer",
+            "response": "Herzinfarkt",
+            "choices": []
+        },
+        {
+            "type": "answer",
+            "response": "Panikattacke",
+            "choices": []
+        }
+    ]
+}

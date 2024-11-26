@@ -1,0 +1,36 @@
+{
+ "name": "   Was ist passiert?",
+ "children": [
+  {
+   "name": "Verkehrsunfall",
+   "children": [
+    {
+     "name": "Wie viele Personen sind betroffen?",
+     "children": [
+      { "name": "1 (Eine Person)",
+        "children": [{
+         "name": "Ist die Person ansprechbar?",
+         "children": [{
+          "name": "Ja",
+          "children": [{
+           "name": "Wo ist der Unfall passiert?"
+          }]
+         }]
+        }]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Herzinfarkt",
+   "children": [
+   ]
+  },
+  {
+   "name": "Panikattacke",
+   "children": [
+   ]
+  }
+ ]
+}

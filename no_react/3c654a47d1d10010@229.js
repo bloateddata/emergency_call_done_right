@@ -1,7 +1,7 @@
 function _1(md){return(md``)}
 
 function _chart(d3,data) {
-  const width = 928;
+  const width = 1280;
 
   // Compute the tree height; this approach will allow the height of the
   // SVG to scale according to the breadth (width) of the tree layout.
@@ -70,15 +70,6 @@ function _chart(d3,data) {
   return svg.node();
 }
 
-
-function _3(md){return(
-md`Using [Observable Plot](/plot/)’s concise API, this chart can simply be written as:`
-)}
-
-function _4(){return(
-    `Using [Observable Plot](/plot/)’s concise API, this chart can simply be written as:`
-)}
-
 function _data(FileAttachment){return(
 FileAttachment("flare.json").json()
 )}
@@ -87,13 +78,13 @@ export default function define(runtime, observer) {
   const main = runtime.module();
   function toString() { return this.url; }
   const fileAttachments = new Map([
-    ["flare.json", {url: new URL("./files/85b8f86120ba5c8012f55b82fb5af4fcc9ff5e3cf250d110e111b3ab98c32a3fa8f5c19f956e096fbf550c47d6895783a4edf72a9c474bef5782f879573750ba.json", import.meta.url), mimeType: "application/json", toString}]
+    ["flare.json", {url: new URL("./files/sample.json", import.meta.url), mimeType: "application/json", toString}]
   ]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], _1);
   main.variable(observer("chart")).define("chart", ["d3","data"], _chart);
-
-
   main.variable(observer("data")).define("data", ["FileAttachment"], _data);
+
+
   return main;
 }
