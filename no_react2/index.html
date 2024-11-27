@@ -11,10 +11,18 @@
 
 <input type="range" min="0" max="8" value="0" class="slider" onchange="changeValue" id="myRange">
 
-<img src="voice.jpg" height="80" width="80"/>
+
+
 <button style="margin: 10px; padding: 5px" id="playButton"><img src="play-button-svgrepo-com.svg"></button>
+
+
+<img src="voice.jpg" height="80" width="80" id="voicePng" />
 <img src="voice_.gif" height="80" width="125" id="voiceGif"/>
-<img src="spinner.gif" height="80" width="80" id="spinnerGif"/><br>
+<img src="ohr.png" height="80" width="80" id="ohr"/>
+<img src="spinner.gif" height="80" width="80" id="spinnerGif"/>
+<br>
+
+
 
 <hr style="box-shadow: 2px 2px 5px 1px #7792d9;"><br><br>
 
@@ -100,8 +108,10 @@
 
         function startSimulation() {
             doLogic(0);
+            $('#voicePng').show();
             $('#voiceGif').show();
             $('#spinnerGif').show();
+            $('#ohr').show();
             let counterMaxTime = 1700;
             let counterLength = 9;
             for (let i = 0; i < counterLength ; i++) {
@@ -110,13 +120,17 @@
             setTimeout(enableDisableButton, counterMaxTime * counterLength)
         }
 
+        $('#voicePng').hide();
         $('#voiceGif').hide();
         $('#spinnerGif').hide();
+        $('#ohr').hide();
 
         function enableDisableButton() {
             $('#playButton').prop('disabled', false);
             $('#voiceGif').hide();
+            $('#voicePng').hide();
             $('#spinnerGif').hide();
+            $('#ohr').hide();
         }
 
         document.getElementById('myRange').addEventListener('change', (event) => {});
