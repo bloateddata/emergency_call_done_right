@@ -15,49 +15,44 @@
         "description": "Verkehrsunfall",
         "children": [
           {
-            "description": "Wie viele Personen sind betroffen?",
+            "description": "Ist jemand verletzt oder in Gefahr?",
             "children": [
               {
-                "description": "Eine Person",
+                "description": "Ja",
                 "children": [
                   {
-                    "description": "Wo ist der Unfall passiert?",
+                    "description": "Brennen Fahrzeuge oder können Sie schwarzen Rauch erkennen?",
                     "children": [
                       {
-                        "description": "Nähe Köln Messe Gelände",
+                        "description": "Nein",
                         "children": [
                           {
-                            "description": "Wer ruft an?",
+                            "description": "Wer ist am Unfall beteiligt?",
                             "children": [
                               {
-                                "description": "Beteiligter",
+                                "description": "PKW",
                                 "children": [
 
                                   {
-                                    "description": " . . . ",
-                                    "children": []
+                                    "description": ". . . ",
+                                    "children": [
+                                    ]
                                   }
 
                                 ]
                               },
                               {
-                                "description": "Unbeteiligter",
+                                "description": "LKW",
                                 "children": [
                                   {
-                                    "description": "weitere Fragen . . . ",
+                                    "description": "Wer ist am Unfall noch beteiligt?",
                                     "children": [
                                       {
-                                        "description": " . . . ",
-                                        "children": [ ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "description": "Ist die person ansprechbar?",
-                                    "children": [
-                                      {
-                                        "description": "Perosn reagiert nicht",
-                                        "children": [ ]
+                                        "description": "Person / Radfahrer / Motorrad überrollt / eingeklemmt",
+                                        "children": [ {
+                                          "description": ". . . ",
+                                          "children": []
+                                        } ]
                                       }
                                     ]
                                   }
