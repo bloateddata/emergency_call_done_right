@@ -1,0 +1,22 @@
+[
+  {
+    "description": "<div style=\"font-weight:bold\">Was ist passiert?</div>",
+    "lineColor": "#00ffd9",
+    "children": [
+      {
+        "description": "<div style=\"color:#000\">Verkehrsunfall</div>",
+        "children": [ ]
+      },
+      {
+        "description": "Herzinfarkt",
+        "children": [
+        ]
+      },
+      {
+        "description": "Panikattacke",
+        "children": [
+        ]
+      }
+    ]
+  }
+]

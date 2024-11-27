@@ -1,0 +1,26 @@
+[
+  {
+    "description": "Was ist passiert?",
+    "children": [
+      {
+        "description": "Verkehrsunfall",
+        "children": [
+          {
+            "description": "Wie viele Personen sind betroffen?",
+            "children": [ ]
+          }
+        ]
+      },
+      {
+        "description": "Herzinfarkt",
+        "children": [
+        ]
+      },
+      {
+        "description": "Panikattacke",
+        "children": [
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HorTree - jQuery Horizontal Hierarchical Tree</title>
+    <link rel="stylesheet" href="jquery.hortree.min.css">
+</head>
+<body>
+
+
+<p>Audio Call File</p>
+<input type="range" min="0" max="4" value="0" class="slider" onchange="changeValue" id="myRange">
+
+<div id="my-container"></div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+<script src="jquery.line.js" type="text/javascript"></script>
+<script src="jquery.hortree.min.js" type="text/javascript"></script>
+<style>
+    .slidecontainer {
+        width: 100%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+</style>
+
+<script type="text/javascript">
+    (function () {
+
+        var iterationData = 0;
+        var iterationDataMax = 2;
+        var data = [];
+
+
+        document.getElementById('myRange').addEventListener('change', (event) => {
+            console.log(event.target.value);
+            oneSecondFunction(event.target.value);
+        });
+
+        document.getElementById('myRange').oninput = function(event) {
+            oneSecondFunction(event.target.value);
+        };
+
+        function oneSecondFunction(value) {
+
+            fetch('./data/data' + value + '.json')
+                .then(response => { return response.json(); })
+                .then(data => {
+                    console.log(data)
+
+                    $('#my-container').hortree({
+                        data: data
+                    });
+                        iterationData++;
+                        if (iterationDataMax > iterationData){
+                            iterationData = 0;
+                        }
+
+                        setTimeout(oneSecondFunction, 1000);
+                }
+                )
+                .catch(error => console.error('Error:', error));
+
+
+                //console.log("############")
+        }
+
+
+
+
+        $('#my-container').hortree({
+            data: data
+        });
+
+    })();
+
+</script>
+
+</body>
+
+
+</html>
