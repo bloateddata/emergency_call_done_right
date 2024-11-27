@@ -1,7 +1,12 @@
 [
   {
     "description": "Was ist passiert?",
+    "className": "classRed",
     "children": [
+      {
+        "description": "Feuer",
+        "children": []
+      },
       {
         "description": "Verkehrsunfall",
         "children": [
@@ -16,11 +21,20 @@
                     "children": [
                       {
                         "description": "Wo ist der Unfall passiert?",
-                        "children": []
+                        "children": [
+                          {
+                            "description": "X",
+                            "children": [ ]
+                          }
+                        ]
                       }
                     ]
                   }
                 ]
+              },
+              {
+                "description": "Mehrere Personen",
+                "children": [ ]
               }
             ]
           }

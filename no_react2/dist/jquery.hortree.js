@@ -6,7 +6,14 @@
  *  Made by Alessandro Mitelli
  *  Under MIT License
  */
-;(function ($, window, document, undefined) {
+;
+
+function getClassName(className) {
+    if (className == null || className == undefined || className == "")
+    return "classGrey";
+}
+
+(function ($, window, document, undefined) {
 
     "use strict";
 
@@ -29,14 +36,14 @@
 
         if (elem.tooltip && elem.tooltip.toString().trim() !== '') {
 
-            html.push('<div class="hortree-label hortree-tooltip">');
-            html.push('<span class="hortree-tooltip-text">' + elem.tooltip + '</span>');
-            html.push(elem.description);
+            html.push('<div class="hortree-label hortree-tooltip ' + elem.className + '">');
+            html.push('<span class="hortree-tooltip-text ' + elem.className + ' ">' + elem.tooltip + '</span>');
+            html.push(elem.description +  " XXXX");
             html.push('</div>');
 
         } else {
 
-            html.push('<div class="hortree-label">' + elem.description + '</div>');
+            html.push('<div class="hortree-label ' + getClassName(elem.className)  + '">' + elem.description + '</div>');
 
         }
 
