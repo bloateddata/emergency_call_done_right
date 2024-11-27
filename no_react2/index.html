@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="jquery.hortree.min.css">
 </head>
-<body>
+<body style="background-color: #dcdadf;">
 
-<p>Gespräch - Zeitstrahl illustriert</p>
-<input type="range" min="0" max="4" value="0" class="slider" onchange="changeValue" id="myRange">
+<h2>Notrufgespräch mit Zeitstrahl illustriert</h2>
+<h3>Exemplarische Darstellung eines möglichen Graphenverlaufs</h3>
+
+<input type="range" min="0" max="8" value="0" class="slider" onchange="changeValue" id="myRange">
+
+<img src="voice.jpg" height="80" width="80"/>
+<button style="margin: 10px; padding: 5px" id="playButton"><img src="play-button-svgrepo-com.svg"></button>
+<img src="voice_.gif" height="80" width="125" id="voiceGif"/>
+<img src="spinner.gif" height="80" width="80" id="spinnerGif"/><br>
+
+<hr style="box-shadow: 2px 2px 5px 1px #7792d9;"><br><br>
 
 <div id="my-container"></div>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+<script src="/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
 <script src="jquery.line.js" type="text/javascript"></script>
 <script src="dist/jquery.hortree.js" type="text/javascript"></script>
+
 <style>
 
     .slider {
@@ -49,15 +59,29 @@
     }
 
     .classRed {
-        color: red
+        color: red;
+        border: 2px solid red;
+    }
+
+    .classQuestion {
+        border-radius: 30px;
+    }
+
+    .classGreen {
+        color: #00e500 !important;
+        border: 2px solid #00e500 !important;
+        box-shadow: 2px 2px 5px 1px #28a79a;
     }
 
     .classGrey {
         color: rgba(124, 124, 124, 0.72);
+        border: 2px solid grey;
+
     }
 
     .classBlack {
-        color: black
+        color: black;
+        border: 2px solid black;
     }
 
 </style>
@@ -68,54 +92,76 @@
     let iterationDataMax = 2;
     let globalData = [];
 
-    $(document).ready(function(){
-
-        function inverseColors() {
-                var css = 'html {-webkit-filter: invert(100%);' +
-                        '-moz-filter: invert(100%);' +
-                        '-o-filter: invert(100%);' +
-                        '-ms-filter: invert(100%); }',
-
-                    head = document.getElementsByTagName('head')[0],
-                    style = document.createElement('style');
-                if (!window.counter) { window.counter = 1;} else  { window.counter ++;
-                    if (window.counter % 2 == 0) { var css ='html {-webkit-filter: invert(0%); -moz-filter:    invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }'}
-                };
-
-                style.type = 'text/css';
-                if (style.styleSheet){
-                    style.styleSheet.cssText = css;
-                } else {
-                    style.appendChild(document.createTextNode(css));
-                }
-             head.appendChild(style);
-        }
-       // inverseColors();
-
-        document.getElementById('myRange').addEventListener('change', (event) => {
-            // console.log(globalData);
-            //
-            //     for (var i=0; i<globalData[0].children.length; i++){
-            //         console.log(globalData[0].children[i])
-            //         //globalData[event.target.value].className = "classRed";
-            //     }
-            //
-            //
-            // $('#my-container').hortree({
-            //     data: globalData
-            // });
+    $(document).ready(function() {
+        $( "#playButton" ).click(function() {
+            startSimulation();
+            $('#playButton').prop('disabled', true);
         });
 
-        document.getElementById('myRange').oninput = function(event) {
-            console.log(globalData);
-            for (var i=0; i<globalData[0].children.length; i++) {
-                console.log(globalData[0].children[i])
-                globalData[0].children[i].className = "classRed";
+        function startSimulation() {
+            doLogic(0);
+            $('#voiceGif').show();
+            $('#spinnerGif').show();
+            let counterMaxTime = 1700;
+            let counterLength = 9;
+            for (let i = 0; i < counterLength ; i++) {
+                setTimeout(doLogic, counterMaxTime * i, i)
             }
+            setTimeout(enableDisableButton, counterMaxTime * counterLength)
+        }
+
+        $('#voiceGif').hide();
+        $('#spinnerGif').hide();
+
+        function enableDisableButton() {
+            $('#playButton').prop('disabled', false);
+            $('#voiceGif').hide();
+            $('#spinnerGif').hide();
+        }
+
+        document.getElementById('myRange').addEventListener('change', (event) => {});
+        document.getElementById('myRange').oninput = function(event) {
+            doLogic(event.target.value)
+        };
+
+        function doLogic(value){
+            document.getElementById('myRange').value = value;
+            if (value == 0) {
+                oneSecondFunction(0);
+            }
+            if (value == 1) {
+                globalData[0].children[1].className = "classGreen";
+            }
+            if (value == 2) {
+                globalData[0].className = "classGreen";
+            }
+            if (value == 3) {
+                globalData[0].children[1].children[0].children[0].children[0].children[0].className = "classGreen";
+            }
+
+            if (value == 4) {
+                globalData[0].children[1].children[0].children[0].children[0].className = "classGreen";
+            }
+
+            if (value == 5) {
+                globalData[0].children[1].children[0].children[0].children[0].children[0].children[0].children[1].className = "classGreen";
+            }
+
+            if (value == 6) {
+                globalData[0].children[1].children[0].children[0].children[0].children[0].children[0].className = "classGreen";
+            }
+
+            if (value == 7) {
+                globalData[0].children[1].children[0].children[0].className = "classGreen";
+            }
+            if (value == 8) {
+                globalData[0].children[1].children[0].className = "classGreen";
+            }
+
             $('#my-container').hortree({
                 data: globalData
             });
-        };
+        }
 
         function oneSecondFunction(value) {
             fetch('./data/data' + value + '.json')

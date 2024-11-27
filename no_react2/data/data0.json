@@ -1,11 +1,15 @@
 [
   {
     "description": "Was ist passiert?",
-    "className": "classRed",
     "children": [
       {
         "description": "Feuer",
-        "children": []
+        "children": [
+          {
+          "description": ". . . ",
+          "children": [ ]
+        }
+        ]
       },
       {
         "description": "Verkehrsunfall",
@@ -14,21 +18,50 @@
             "description": "Wie viele Personen sind betroffen?",
             "children": [
               {
-                "description": "1 (Eine Person)",
+                "description": "Eine Person",
                 "children": [
                   {
-                    "description": "Ja",
+                    "description": "Wo ist der Unfall passiert?",
                     "children": [
                       {
-                        "description": "Wo ist der Unfall passiert?",
+                        "description": "Nähe Köln Messe Gelände",
                         "children": [
                           {
-                            "description": "X",
-                            "children": [ ]
+                            "description": "Wer ruft an?",
+                            "children": [
+                              {
+                                "description": "Beteiligter",
+                                "children": [
+
+                                  {
+                                    "description": " . . . ",
+                                    "children": []
+                                  }
+
+                                ]
+                              },
+                              {
+                                "description": "Unbeteiligter",
+                                "children": [
+                                  {
+                                    "description": "weitere Fragen . . . ",
+                                    "children": [
+                                      {
+                                        "description": " . . . ",
+                                        "children": [ ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
                           }
                         ]
                       }
                     ]
+                  }, {
+                    "description": " . . . ",
+                    "children": [ ]
                   }
                 ]
               },
@@ -43,11 +76,48 @@
       {
         "description": "Herzinfarkt",
         "children": [
+          {
+            "description": ". . . ",
+            "children": [
+              {
+                "description": ". . . ",
+                "children": [ ]
+              }
+            ]
+          }
         ]
       },
       {
         "description": "Panikattacke",
         "children": [
+          {
+            "description": " . . . ",
+            "children": [
+              {
+                "description": ". . . ",
+                "children": [ ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "description": "Flugzeugabsturz",
+        "children": [
+          {
+            "description": ". . . ",
+            "children": [ ]
+          }
+        ]
+      },
+      {
+        "description": "Messerattacke",
+        "children": [
+          {
+            "description": ". . . ",
+            "children": [
+            ]
+          }
         ]
       }
     ]

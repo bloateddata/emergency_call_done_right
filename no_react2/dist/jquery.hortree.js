@@ -10,7 +10,8 @@
 
 function getClassName(className) {
     if (className == null || className == undefined || className == "")
-    return "classGrey";
+    return "classGrey"
+    else return className;
 }
 
 (function ($, window, document, undefined) {
