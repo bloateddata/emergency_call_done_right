@@ -51,6 +51,15 @@
                                         "children": [ ]
                                       }
                                     ]
+                                  },
+                                  {
+                                    "description": "Ist die person ansprechbar?",
+                                    "children": [
+                                      {
+                                        "description": "Perosn reagiert nicht",
+                                        "children": [ ]
+                                      }
+                                    ]
                                   }
                                 ]
                               }
