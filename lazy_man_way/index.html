@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <audio controls id="audioPlayer">
+        <source src="notruf_verkehrsunfall_mehrinfo3.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    <p>Timestamp <span id="timeStamp"></span></p>
+    <p>Text: <span id="output"></span></p>
+
+
+    <script>
+        let time = document.getElementById("audioPlayer");
+        let compare = '';
+
+        time.ontimeupdate = function () {
+            document.getElementById("timeStamp").innerHTML = time.currentTime;
+            fetch("whisper_mehrinfo3.json")
+                .then(response => response.json())
+                .then(data => {
+                    data.segments.forEach(element => {
+                        element.words.forEach(word => {
+                            // console.log(word.start);
+                            // console.log(word.end);
+                            // console.log(word.word);
+                            if (word.start <= time.currentTime && word.end >= time.currentTime) {
+
+                                var test = document.getElementById("output").innerHTML + word.word;
+                                if (test != compare) {
+                                    compare = test;
+                                    document.getElementById("output").innerHTML = compare;
+                                }
+                            }
+                        });
+                    });
+                });
+        };
+
+
+    </script>
+
+</body>
+
+</html>
